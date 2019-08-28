@@ -18,7 +18,10 @@ public class ChatLineBuffer
 		this.player = Game.cachedPlayers[Game.myPlayerIndex];
     }
     
-    public MessageNode addMessage(final int chatId, final String username, final String msg, final String string_2) {
+    public MessageNode addMessage(int chatId, final String username, final String msg, final String string_2) {
+    	if(chatId == 14)
+    		chatId = 0;
+    	
     	System.out.println("<addMessage> Args: "+chatId+", "+username+", "+msg+", "+string_2);
     	if(msg.equals("Sorry, that command does not exist."))
     		return addMessage(chatId, username, "", string_2);
